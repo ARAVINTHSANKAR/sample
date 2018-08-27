@@ -46,3 +46,45 @@ BILLING PAGE:
     Save & PrintLater -- Button : to save and print bill later
 
 SALE HISTORY PAGE:
+    Total Battery sale Table -
+        Columns -
+            BatteryModel
+            BatteryNumber
+            BuyerName
+            PurchasedDate
+            RegistrationNumber         
+    {
+     on clicking a row entire details of the battery should be visible.
+    }
+    
+    searchBy -- DropDown [ BatteryNumber, BuyerName, BetweenpurchasedDates, RegistrationNumber ]
+        
+    search -- inputField : { string }
+    
+WARRENTY BATTERY PAGE:
+    searchBy -- DropDown [ BatteryNumber, BuyerName, BetweenpurchasedDates, RegistrationNumber ]
+        
+    search -- inputField : { string }    
+
+    ClaimWarrenty -- Button : { 
+        a aside tab should open with --
+            NewBatteryNumber : { string }
+            NewPurchasedDate : { date }            
+    }
+    
+    Table with number of warrenty batteries -
+        columns -
+            BatteryModel
+            BatteryNumber
+            PurchasedDate
+            BuyerName
+            RegistrationNumber
+        on clicking each battery a pop up tab should open with 
+            total battery details including old battery details
+            
+TEMPORARY BATTERY LIST PAGE:
+    Split Page into two halves
+        one side old battery, other side temp battery details
+        
+STOCK DETAILS PAGE:
+    Same as old site

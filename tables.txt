@@ -1,0 +1,17 @@
+TABLES
+
+BatteryDetails --- customerId as customer as F.K
+
+CustomerDetails 
+
+BikeDetails --- customerId and BatteryId as F.K
+
+Masters
+
+UserDetails 
+
+WarrentyBatteryDetails  --- BatteryId as battery as F.K
+
+TemporaryBatteryDetails --- BatteryId as battery as F.K
+
+StockDetails
