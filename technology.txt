@@ -1,0 +1,7 @@
+FrontEnd -- ANGULAR ts
+BackEnd -- NODE ts
+DB -- mssql
+Validations -- joi & interface
+Documentation -- swagger
+UnitTestCases -- mocha, chai
+

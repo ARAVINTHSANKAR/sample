@@ -1,0 +1,48 @@
+LOGIN PAGE:
+
+    UserId -- inputField : { string }
+    Password -- inputField : { string }
+    FogetPassword -- Button :
+        on clicking {
+            enter email box should be visible -- inputField: { string }
+        }
+    LogIn -- Button 
+    SignUp -- Button
+
+SIGN UP PAGE:
+
+    Name -- inputField : { string }
+    EmailId -- inputField : { string }
+    contact -- inputField : { string }
+    Password -- inputField : { string }
+    Role -- DropDown [Boss, employee, relation]
+
+BILLING PAGE:
+
+    BatteryDetails
+        Brand -- inputField : { string }
+        ModelName -- inputField : { string }
+        BatteryNumber -- inputField : { string }
+        Quantity -- inputField : { int }
+        BatteryPrice -- inputField : { bigInt }
+        CGST -- inputField : { float }
+        CGSTAmount -- inputField : { float }
+        SGST -- inputField : { float }
+        SGSTAmount -- inputField : { float }
+        TotalPrice -- inputField : { bigInt }
+        PurchasedFrom -- inputField : { string }
+    BuyerDetails
+        Name -- inputField : { string }
+        EmailId -- inputField : { string }
+        Contact -- inputField : { string }
+        Role -- DropDown [party, customer, mechanic, relation, others]
+        PurchasedDate -- inputField : { date }
+    BikeDetails
+        Maker -- DropDown : { string }
+        Name -- DropDown : { string }
+        RegNumber -- inputField : { string }
+        
+    Save & Print -- Button : to save and print the bill
+    Save & PrintLater -- Button : to save and print bill later
+
+SALE HISTORY PAGE:
