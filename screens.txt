@@ -39,7 +39,7 @@ BILLING PAGE:
         PurchasedDate -- inputField : { date }
     BikeDetails
         Maker -- DropDown : { string }
-        Name -- DropDown : { string }
+        Model -- DropDown : { string }
         RegNumber -- inputField : { string }
         
     Save & Print -- Button : to save and print the bill
