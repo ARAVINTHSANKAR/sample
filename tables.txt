@@ -1,17 +1,90 @@
 TABLES
 
 BatteryDetails --- customerId as customer as F.K
-
-CustomerDetails 
+        Brand -- varchar
+        ModelName -- varchar
+        BatteryNumber -- varchar
+        Quantity -- number
+        BatteryPrice -- bigInt
+        CGST -- float
+        CGSTAmount -- float
+        SGST -- float
+        SGSTAmount -- float
+        TotalPrice -- float
+        PurchasedFrom -- varchar
+        CreatedBy -- varchar
+        CreatedOn -- date
+        ModifiedBy -- varchar
+        ModifiedOn -- date
+        
+BuyerDetails 
+        Name -- varchar
+        EmailId -- varchar
+        Contact -- phone
+        Role -- varchar
+        PurchasedDate -- date
+        CreatedBy -- varchar
+        CreatedOn -- date
+        ModifiedBy -- varchar
+        ModifiedOn -- date
 
 BikeDetails --- customerId and BatteryId as F.K
-
+        Maker -- varchar
+        Name -- varchar
+        RegNumber -- varchar
 Masters
+    BatteryModels
+    BuyersRole
+    UsersRole
+    BikeMaker
+    BikeModel
+    SaleHistorySearchBy
+    WarrentyBatterySearchBy
 
 UserDetails 
-
+    UserId -- varchar
+    DisplayName -- varchar
+    Password -- varchar
+    EmailId --  varchar
+    Role --  varchar
+    CreatedBy -- varchar
+    CreatedOn -- date
+    ModifiedBy -- varchar
+    ModifiedOn -- date
+    
 WarrentyBatteryDetails  --- BatteryId as battery as F.K
-
+        Brand -- varchar
+        ModelName -- varchar
+        BatteryNumber -- varchar
+        Quantity -- number
+        BatteryPrice -- bigInt
+        CGST -- float
+        CGSTAmount -- float
+        SGST -- float
+        SGSTAmount -- float
+        TotalPrice -- float
+        PurchasedFrom -- varchar
+        CreatedBy -- varchar
+        CreatedOn -- date
+        ModifiedBy -- varchar
+        ModifiedOn -- date
+        
 TemporaryBatteryDetails --- BatteryId as battery as F.K
+        Brand -- varchar
+        ModelName -- varchar
+        BatteryNumber -- varchar
+        Quantity -- number
+        BatteryPrice -- bigInt
+        CGST -- float
+        CGSTAmount -- float
+        SGST -- float
+        SGSTAmount -- float
+        TotalPrice -- float
+        PurchasedFrom -- varchar
+        CreatedBy -- varchar
+        CreatedOn -- date
+        ModifiedBy -- varchar
+        ModifiedOn -- date
 
 StockDetails
+ as in previous application
