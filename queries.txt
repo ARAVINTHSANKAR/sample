@@ -1,0 +1,56 @@
+CREATE TABLE BatteryDetails (
+    BatteryModelId int NOT NULL IDENTITY(1,1),
+    BatteryModel varchar(50)
+	PRIMARY KEY (BatteryModelId)
+);
+
+CREATE TABLE BuyersRoles (
+    BuyersRoleId int NOT NULL IDENTITY(1,1),
+    BuyersRole varchar(50)
+	PRIMARY KEY (BuyersRoleId)
+);
+
+CREATE TABLE UsersRoles (
+    UsersRoleId int NOT NULL IDENTITY(1,1),
+    UsersRole varchar(50)
+	PRIMARY KEY (UsersRoleId)
+);
+
+CREATE TABLE BikeMakers (
+    BikeMakerId int NOT NULL IDENTITY(1,1),
+    BikeMaker varchar(50)
+	PRIMARY KEY (BikeMakerId)
+);
+
+CREATE TABLE BikeModels (
+	BikeModelId int NOT NULL IDENTITY(1,1),
+	BikeModel varchar(50)
+	PRIMARY KEY (BikeModelId)
+);
+
+CREATE TABLE SalesHistorySearchBy (
+	SalesHistorySearchById int NOT NULL IDENTITY(1,1),
+	Fields varchar(50)
+	PRIMARY KEY (SalesHistorySearchById)
+);
+
+CREATE TABLE WarrentyBatterySearchBy (
+	WarrentyBatterySearchById int NOT NULL IDENTITY(1,1),
+	Fields varchar(50)
+	PRIMARY KEY (WarrentyBatterySearchById)
+);
+
+CREATE TABLE TablesList (
+	TableId int NOT NULL IDENTITY(1,1),
+	TableName varchar(50)
+	PRIMARY KEY (TableId)
+);
+
+CREATE TABLE StockDetails (
+	StockDetailsId int NOT NULL IDENTITY(1,1),
+	BatteryModelId int NOT NULL,
+	TotalSale bigInt,
+	RemainingStock bigInt,
+	PRIMARY KEY (StockDetailsId),
+	FOREIGN KEY (BatteryModelId) REFERENCES BatteryModels(BatteryModelId) 
+);
