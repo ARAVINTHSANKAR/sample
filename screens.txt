@@ -9,6 +9,38 @@ LOGIN PAGE:
     LogIn -- Button 
     SignUp -- Button
 
+    API
+
+    1. POST : for authentication {
+        payLoad : {
+            userId: "aravinth",
+            password: "1234"
+        }
+        will check is the user available {
+            if(available) {
+                will check wheather the password is correct {
+                    if(correct) {
+                        have to return a jwt
+                    } else {
+                        have to return "password is incorrect"
+                    }
+                }
+            } else {
+                have to return "user not exist"
+            }
+        }
+    }
+        
+    2. POST : to send email {
+       payLoad : {
+           emailId: "aravinth.ba@object-frontier.com",
+           userId: "aravinth"
+       }
+       have to fetch the password of the particular user and send it in mail.
+    }
+    
+-----------------------------------------------------------------------------------------
+    
 SIGN UP PAGE:
 
     Name -- inputField : { string }
@@ -17,6 +49,22 @@ SIGN UP PAGE:
     Password -- inputField : { string }
     Role -- DropDown [Boss, employee, relation]
 
+    API
+    
+    1. POST : to create a user {
+        payLoad: {
+            Name: "aravinth",
+            emailId: "aravinth.ba@object-frontier.com"
+            contact: "9486175156",
+            password: "1234",
+            role: "relation"
+        }
+        as soon as a user sign up in boss tab he will be displayed and only if the boss approves him he can login
+            till that he should wait.
+    }
+    
+-----------------------------------------------------------------------------------------
+    
 BILLING PAGE:
 
     BatteryDetails
@@ -45,6 +93,23 @@ BILLING PAGE:
     Save & Print -- Button : to save and print the bill
     Save & PrintLater -- Button : to save and print bill later
 
+    API
+    
+    
+    1. POST : save the battery details and save the bill in a local folder{
+        payLoad: {
+            batteryDetails
+        }
+    }
+    
+    2.POST : save the battery details, save the bill in a local folder and print it as a pdf{
+        payLoad: {
+            batteryDetails
+        }
+    }
+    
+-----------------------------------------------------------------------------------------
+    
 SALE HISTORY PAGE:
     Total Battery sale Table -
         Columns -
@@ -60,6 +125,21 @@ SALE HISTORY PAGE:
     searchBy -- DropDown [ BatteryNumber, BuyerName, BetweenpurchasedDates, RegistrationNumber ]
         
     search -- inputField : { string }
+
+    API
+    
+    1. GET : to list all the sold battery details(only few) payLoad: {searchTable: "batteryDetails"}
+    2. GET : to display all the batteryDetails for the particular clicked battery {
+        searchTable: "batteryDetails"
+        payLoad - batteryNumber
+    }
+    3. POST : should display the selected battery {
+        payLoad {
+            selectField: "BuyerName",
+            toSearch: "sankar"
+        }
+    }
+-----------------------------------------------------------------------------------------    
     
 WARRENTY BATTERY PAGE:
     searchBy -- DropDown [ BatteryNumber, BuyerName, BetweenpurchasedDates, RegistrationNumber ]
@@ -81,10 +161,55 @@ WARRENTY BATTERY PAGE:
             RegistrationNumber
         on clicking each battery a pop up tab should open with 
             total battery details including old battery details
+
+    API
+    1. to search a particular battery : can use the same 3rd post api in SALE HISTORY PAGE.
+    2. GET: to display all warrenty batteries in the table {
+        can use same 1st api in SALE HISTORY PAGE but should change the payLoad: { searchTable: "warrentyTable"}
+       }
+    3. to display all the details of the particular battery : can use the 2nd api in SALE HISTORY PAGE
+            
+-----------------------------------------------------------------------------------------
             
 TEMPORARY BATTERY LIST PAGE:
+    
+    searchBy -- DropDown [ BatteryNumber, BuyerName, BetweenpurchasedDates, RegistrationNumber ]
+        
+    search -- inputField : { string }
+    
     Split Page into two halves
         one side old battery, other side temp battery details
+    
+    a form to enter few details about the temporary batteryDetails
+    
+    API
+    
+    1. for 1st and 2nd feature SALE HISTORY PAGE api can be used.
+    2. POST: {
+            to save the temporary batteryDetails
+        }
+        
+    3.  to fetch all the temporary batteryDetails to display in table
+    
+-----------------------------------------------------------------------------------------        
         
 STOCK DETAILS PAGE:
     Same as old site
+    
+-----------------------------------------------------------------------------------------        
+
+ACTIVATE USER PAGE ( only for boss login )
+
+should display all the user list along with toggle button for each user
+
+if toggle button is switched then particular user will be activated or deactivated
+
+    API    
+    
+    1. GET: to display all the user in user table
+    2. POST : to activate or deactivate a particular user {
+            payLoad: {
+                userId: "aravinth",
+                "status": "activate"
+            }
+        }
